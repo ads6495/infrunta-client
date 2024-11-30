@@ -1,5 +1,5 @@
-import React, { createContext, useContext, useState } from 'react';
-import { User, AuthState } from '../types';
+import React, { createContext, useContext, useState } from "react";
+import { User, AuthState } from "../types";
 
 interface AuthContextType {
   auth: AuthState;
@@ -18,9 +18,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const login = async (email: string) => {
     // In a real app, this would make an API call
     const mockUser: User = {
-      name: 'John Doe',
+      name: "John Doe",
       email: email,
-      currentLanguage: { id: '1', name: 'Spanish', code: 'es', flag: '🇪🇸' },
+      currentLanguage: { id: "1", name: "Spanish", code: "es", flag: "🇪🇸" },
       streak: 5,
       dailyGoal: 30,
       progress: 65,
@@ -49,7 +49,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 export function useAuth() {
   const context = useContext(AuthContext);
   if (context === undefined) {
-    throw new Error('useAuth must be used within an AuthProvider');
+    throw new Error("useAuth must be used within an AuthProvider");
   }
   return context;
 }

@@ -11,15 +11,19 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import "./index.css";
 import App from "./App.tsx";
 import { LoginPage } from "./pages/LoginPage.tsx";
+import { AuthProvider } from "./context/AuthContext.tsx";
+import { CourseOverview } from "./pages/CourseOverview.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route index element={<App />} />
-
-        <Route path="login" element={<LoginPage />} />
-      </Routes>
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<App />} />
+          <Route path="login" element={<LoginPage />} />
+          <Route path="course" element={<CourseOverview />} />
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   </StrictMode>
 );
