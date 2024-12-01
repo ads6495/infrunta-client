@@ -13,15 +13,21 @@ import App from "./App.tsx";
 import { LoginPage } from "./pages/LoginPage.tsx";
 import { AuthProvider } from "./context/AuthContext.tsx";
 import { CourseOverview } from "./pages/CourseOverview.tsx";
+import Layout from "./Layout.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <AuthProvider>
       <BrowserRouter>
         <Routes>
-          <Route index element={<App />} />
+          {/* Wrap pages with the Layout */}
+          <Route element={<Layout />}>
+            <Route index element={<App />} />
+            <Route path="course" element={<CourseOverview />} />
+          </Route>
+
+          {/* Pages without the Header */}
           <Route path="login" element={<LoginPage />} />
-          <Route path="course" element={<CourseOverview />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>

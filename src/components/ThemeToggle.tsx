@@ -1,7 +1,5 @@
-"use client";
-
+import { Moon, Sun } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import { FiSun, FiMoon } from 'react-icons/fi';
 
 export default function ThemeToggle() {
   const [theme, setTheme] = useState('light');
@@ -21,7 +19,7 @@ export default function ThemeToggle() {
 
   return (
     <button onClick={toggleTheme} className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
-      {theme === 'light' ? <FiMoon size={24} /> : <FiSun size={24} />}
+      {theme === 'light' ? <Moon /> : <Sun />}
     </button>
   );
 }

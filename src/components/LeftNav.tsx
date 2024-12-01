@@ -1,6 +1,5 @@
-"use client";
-import { CiMenuBurger, CiMenuFries } from "react-icons/ci";
 import { useState } from "react";
+import { Menu, X } from "lucide-react";
 
 export default function LeftNavBar() {
   const [isNavOpen, setIsNavOpen] = useState(true);
@@ -13,7 +12,7 @@ export default function LeftNavBar() {
         className="w-full p-2 text-foreground hover:bg-secondary"
         onClick={() => setIsNavOpen(!isNavOpen)}
       >
-        {isNavOpen ? <CiMenuFries size={24} /> : <CiMenuBurger size={24} />}
+        {isNavOpen ? <X /> : <Menu />}
       </button>
       {isNavOpen && (
         <ul className="p-4 text-foreground">
