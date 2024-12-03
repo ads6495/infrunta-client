@@ -1,4 +1,6 @@
+import AudioGrid from "../components/AudioGrid";
 import { LessonCard } from "../components/LessonCard";
+import { QuizPage } from "../components/QuizPage";
 import { LessonCard as LessonCardType } from "../types";
 
 export function CourseOverview() {
@@ -43,6 +45,8 @@ export function CourseOverview() {
           />
         ))}
       </div>
+      <QuizPage />
+      <AudioGrid />
     </div>
   );
 }

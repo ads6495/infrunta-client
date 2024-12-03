@@ -1,6 +1,13 @@
 import ThemeToggle from "./ThemeToggle";
 import { NavLink } from "react-router";
 
+/**
+ * Header component that displays the application navigation and theme toggle.
+ * Contains the app title, navigation links, and theme toggle button.
+ * 
+ * @component
+ * @returns {JSX.Element} The header bar with navigation elements
+ */
 export default function Header() {
   return (
     <header className="h-[72px] bg-secondary flex items-center justify-between px-4 shadow-sm">

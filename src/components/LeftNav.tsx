@@ -1,6 +1,13 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
+/**
+ * Collapsible navigation sidebar component.
+ * Provides a toggleable navigation menu with animated transitions.
+ * 
+ * @component
+ * @returns {JSX.Element} A collapsible navigation sidebar
+ */
 export default function LeftNavBar() {
   const [isNavOpen, setIsNavOpen] = useState(true);
 

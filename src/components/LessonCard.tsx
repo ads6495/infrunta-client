@@ -6,7 +6,20 @@ interface LessonCardProps {
   onClick: (lesson: LessonCardType) => void;
 }
 
+/**
+ * Card component that displays lesson information.
+ * Shows title, difficulty level, description, duration, and word count.
+ * 
+ * @component
+ * @param {Object} props
+ * @param {LessonCardType} props.lesson - The lesson data to display
+ * @param {Function} props.onClick - Callback function triggered when the card is clicked
+ * @returns {JSX.Element} A card displaying lesson information
+ */
 export function LessonCard({ lesson, onClick }: LessonCardProps) {
+  /**
+   * Object mapping difficulty levels to their respective color classes
+   */
   const levelColors = {
     beginner: "bg-green-100 text-green-800",
     intermediate: "bg-yellow-100 text-yellow-800",
