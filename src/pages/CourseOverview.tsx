@@ -1,6 +1,7 @@
 import AudioGrid from "../components/AudioGrid";
 import { LessonCard } from "../components/LessonCard";
 import { QuizPage } from "../components/QuizPage";
+import { SentenceExercise } from "../components/SentenceExercise";
 import { LessonCard as LessonCardType } from "../types";
 
 export function CourseOverview() {
@@ -33,6 +34,19 @@ export function CourseOverview() {
   const handleLessonClick = (lesson: LessonCardType) => {
     console.log("Starting lesson:", lesson.title);
   };
+  const targetSentence = "Eu merg la magazin";
+  const words = [
+    "Eu",
+    "merg",
+    "la",
+    "magazin", // Relevant words
+    "casa",
+    "mâncare",
+    "frate",
+    "carte",
+    "pisică", // Non-relevant words
+  ];
+
   return (
     <div className="flex flex-col gap-4">
       <h1 className="text-2xl font-bold text-gray-800">Course Overview</h1>
@@ -47,6 +61,7 @@ export function CourseOverview() {
       </div>
       <QuizPage />
       <AudioGrid />
+      <SentenceExercise words={words} targetSentence={targetSentence} />
     </div>
   );
 }

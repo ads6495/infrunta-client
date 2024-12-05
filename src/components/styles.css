@@ -1,0 +1,35 @@
+.exercise-container {
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+}
+
+.target-sentence {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 20px 0;
+  min-height: 40px;
+  font-size: 24px;
+}
+
+.word-bank {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.word {
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  user-select: none;
+  background-color: #f0f8ff;
+  transition: background-color 0.3s;
+}
+
+.word:hover {
+  background-color: #e0f7fa;
+}
