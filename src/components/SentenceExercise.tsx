@@ -2,19 +2,19 @@ import { useState } from "react";
 import "./styles.css";
 
 export function SentenceExercise({words, targetSentence}: {words: string[], targetSentence: string}) {
-  const [userSentence, setUserSentence] = useState([]);
+  const [userSentence, setUserSentence] = useState<string[]>();
 
 
 
-  const handleDrop = (word) => {
+  const handleDrop = (word: string) => {
     console.log("Word dropped:", word);
-    if (!userSentence.includes(word)) {
-      setUserSentence([...userSentence, word]);
+    if (!userSentence?.includes(word)) {
+      setUserSentence([...(userSentence || []), word]);
     }
   };
 
   const checkAnswer = () => {
-    const isCorrect = userSentence.join(" ") === targetSentence;
+    const isCorrect = userSentence?.join(" ") === targetSentence;
     if (isCorrect) {
       alert("Correct!");
     } else {
@@ -35,8 +35,8 @@ export function SentenceExercise({words, targetSentence}: {words: string[], targ
         }}
         onDragOver={(e) => e.preventDefault()}
       >
-        {userSentence.length > 0
-          ? userSentence.join(" ")
+        {userSentence && userSentence?.length > 0
+          ? userSentence?.join(" ")
           : "____ ____ ____ ____"}
       </div>
       <div className="word-bank">

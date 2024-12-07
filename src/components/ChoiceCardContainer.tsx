@@ -19,7 +19,7 @@ interface MultipleChoiceProps {
  */
 export function MultipleChoice({ choices, onAnswer }: MultipleChoiceProps) {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [selectedChoice, setSelectedChoice] = useState<ChoiceCardType | null>(null);
+  const [_, setSelectedChoice] = useState<ChoiceCardType | null>(null);
 
   const handleSelect = (choice: ChoiceCardType) => {
     setSelectedChoice(choice);
