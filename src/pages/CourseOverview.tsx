@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import AudioGrid from "../components/AudioGrid";
 import { LessonCard } from "../components/LessonCard";
 import { QuizPage } from "../components/QuizPage";
@@ -5,6 +6,7 @@ import { SentenceExercise } from "../components/SentenceExercise";
 import { LessonCard as LessonCardType } from "../types";
 
 export function CourseOverview() {
+  const navigate = useNavigate();
   const mockLessons: LessonCardType[] = [
     {
       id: "1",
@@ -32,7 +34,7 @@ export function CourseOverview() {
     },
   ];
   const handleLessonClick = (lesson: LessonCardType) => {
-    console.log("Starting lesson:", lesson.title);
+    navigate(`/course/${lesson.id}`);
   };
   const targetSentence = "Eu merg la magazin";
   const words = [

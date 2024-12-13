@@ -9,11 +9,12 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router";
 import "./index.css";
-import App from "./App.tsx";
 import { LoginPage } from "./pages/LoginPage.tsx";
 import { AuthProvider } from "./context/AuthContext.tsx";
 import { CourseOverview } from "./pages/CourseOverview.tsx";
 import Layout from "./Layout.tsx";
+import { CoursePlayer } from "./pages/CoursePlayer.tsx";
+import Dashboard from "./pages/Dashboard.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -22,8 +23,10 @@ createRoot(document.getElementById("root")!).render(
         <Routes>
           {/* Wrap pages with the Layout */}
           <Route element={<Layout />}>
-            <Route index element={<App />} />
+          // add index route here path=:/ and it loads /dashboard component which still needs created
+            <Route index element={<Dashboard />} />
             <Route path="course" element={<CourseOverview />} />
+            <Route path="/course/:courseId" element={<CoursePlayer />} />
           </Route>
 
           {/* Pages without the Header */}
